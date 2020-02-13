@@ -26,6 +26,16 @@ const API = {
   },
   async createWorkout(data = {}) {
     console.log("creating workout")
+    // var test_workout = {
+    //   day: "Monday",
+    //   exercise: [{
+    //     type: "Cardio",
+    //     name: "Wind Sprints",
+    //     distance: 2,
+    //     duration: 20,
+    //   }]
+    // }
+
     const res = await fetch("/api/workouts", {
       method: "POST",
       body: JSON.stringify(data),
