@@ -51,3 +51,25 @@ You are required to submit the following:
 * The URL to the deployed application
 
 * The URL to the Github repository
+
+
+# Pseudocode
+
+models
+ MongoDB entries for app
+  User
+  Note
+  Index
+
+js
+
+routes
+  html
+    exercise
+    index
+    stats
+  API
+    
+
+server
+
