@@ -2,8 +2,10 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
+// Port configured for either heroku or Local Host
 const PORT = process.env.PORT || 3000;
 
+// Looking at all files in the models folder
 const db = require("./models");
 
 const app = express();
