@@ -1,22 +1,23 @@
 # PumpUptheJAMS
+##### (Unit 17 Nosql Homework: Workout Tracker)
 
-# Unit 17 Nosql Homework: Workout Tracker
+# link 
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+[hosted by Heroku](https://pump-up-the-jams.herokuapp.com/)
 
 ## User Story
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+* As a user, I want to be able to view create and track daily workouts.  I want to be able to log multiple exercises in a workout on a given day.  I should also be able to track the name, type, weight, sets, reps, and duration of exercise.  If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
 ## Business Context
 
 A consumer will reach their fitness goals quicker when they track their workout progress.
 
-## Acceptance Criteria
+## Operation
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+When the user loads the page, they are given the option to create a new workout, or continue with their last workout.
 
-The user should be able to:
+The user is then able to:
 
   * Add exercises to a previous workout plan.
 
@@ -24,32 +25,10 @@ The user should be able to:
 
   * View multiple the combined weight of multiple exercises on the `stats` page.
 
-## Submission on BCS
+## Screenshots:
 
-You are required to submit the following:
+![Main Page](/public/images/main.png)
+(https://github.com/N0matic/PumpUptheJAMS/blob/master/public/images/main.png)
 
-* The URL to the deployed application
-
-* The URL to the Github repository
-
-
-# Pseudocode
-
-models
- MongoDB entries for app
-  User
-  Note
-  Index
-
-js
-
-routes
-  html
-    exercise
-    index
-    stats
-  API
-    
-
-server
-
+![Add Exercises](/public/images/add_exercise.png)
+(https://github.com/N0matic/PumpUptheJAMS/blob/master/public/images/add_exercise.png)
