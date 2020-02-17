@@ -12,17 +12,17 @@ module.exports = function (app) {
 
   // Main page
   app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   // Individual exercise
   app.get("/exercise", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/exercise.html"));
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
 
   // Workout stats page
   app.get("/stats", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/stats.html"));
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
 
 };

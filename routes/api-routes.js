@@ -4,50 +4,32 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
-var workoutCollection = require("../models")
+const db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function (app) {
-
-  // Add a new Workout
-  app.post("/api/workouts", function (req, res) {
-    console.log("workouts route: ", req.body)
-    workoutCollection.create(req.body).then((newWorkout) => {
-      console.log("Adding new workout: ", newWorkout)
-    })
-  });
-
-  // Get Last Workout
-  app.get("/api/workouts", function (req, res) {
-    console.log("workouts route: ", req.body)
-    workoutCollection.find().then((newWorkout) => {
-      console.log("Finding a workout: ", newWorkout)
-      res.json(newWorkout)
-    })
-  });
-
   // Get/Read route for getting all workouts.
   app.get("/api/workouts", function (req, res) {
     // getting it out of Workout.js in models.
-    db.Workout.find({}).then(function (dbWorkout) {
+    db.workout.find({}).then(function (dbWorkout) {
       res.json(dbWorkout);
     }).catch(err => {
       res.json(err);
     })
   })
   app.get("/api/workouts/range", (req, res) => {
-    db.Workout.find({}).then(function (dbWorkout) {
+    db.workout.find({}).then(function (dbWorkout) {
       res.json(dbWorkout);
     }).catch(err => {
       res.json(err);
     });
   })
+
   // Get single workout by id.
   app.get("/api/workouts/:id", function (req, res) {
     var id = req.params.id;
-    db.Workout.findById(id, function (err, dbWorkout) {
+    db.workout.findById(id, function (err, dbWorkout) {
       if (err) {
         console.error(err)
       }
@@ -56,7 +38,7 @@ module.exports = function (app) {
   })
   // Post/Create a new workout in the database.
   app.post("/api/workouts/", function (req, res) {
-    db.Workout.create({ exercise: req.body }).then(function (dbWorkout) {
+    db.workout.create({ exercise: req.body }).then(function (dbWorkout) {
       res.json(dbWorkout);
     }).catch(err => {
       res.json(err);
@@ -66,7 +48,7 @@ module.exports = function (app) {
   // Update a workout with an exercise in the database by id.
   app.put("/api/workouts/:id", function (req, res) {
     var query = { _id: req.params.id };
-    db.Workout.findOneAndUpdate(query, {
+    db.workout.findOneAndUpdate(query, {
       $push: { exercises: [req.body] }
     }, function (err, dbWorkout) {
       if (err) {
